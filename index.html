@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo App de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+
+    <div class="iphone-frame">
+        <div class="iphone-notch"></div>
+        <div class="app-screen">
+            
+            <input type="radio" name="app-tab" id="tab-horarios" class="tab-input" checked>
+            <input type="radio" name="app-tab" id="tab-agenda" class="tab-input">
+            <input type="radio" name="app-tab" id="tab-conteudo" class="tab-input">
+
+            <main class="app-content">
+                <section id="tela-horarios" class="tela">
+                    <header class="app-header">
+                        <h1>Meus Horários</h1>
+                        <button class="btn-add"><i class="fas fa-plus"></i></button>
+                    </header>
+                    <div class="tela-body">
+                        <div class="card">
+                            <div class="card-time">
+                                <h3>07:30 - 07:45</h3>
+                                <p>Hoje, 19 de Agosto</p>
+                            </div>
+                            <div class="card-subject">
+                                <i class="fa-solid fa-earth-americas subject-icon ingles"></i>
+                                <span>Inglês</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-time">
+                                <h3>12:45 - 13:00</h3>
+                                <p>Amanhã, 20 de Agosto</p>
+                            </div>
+                            <div class="card-subject">
+                                <i class="fa-solid fa-piggy-bank subject-icon financas"></i>
+                                <span>Finanças</span>
+                            </div>
+                        </div>
+                         <div class="card">
+                            <div class="card-time">
+                                <h3>19:00 - 19:20</h3>
+                                <p>Quinta, 22 de Agosto</p>
+                            </div>
+                            <div class="card-subject">
+                                <i class="fa-solid fa-utensils subject-icon culinaria"></i>
+                                <span>Culinária</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-time">
+                                <h3>07:30 - 07:45</h3>
+                                <p>Sexta, 23 de Agosto</p>
+                            </div>
+                            <div class="card-subject">
+                                <i class="fa-solid fa-earth-americas subject-icon ingles"></i>
+                                <span>Inglês</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tela-agenda" class="tela">
+                    <header class="app-header">
+                        <h1>Agenda Semanal</h1>
+                    </header>
+                     <div class="tela-body agenda-view">
+                        <div class="day-column">
+                            <div class="day-header">SEG</div>
+                        </div>
+                        <div class="day-column active">
+                            <div class="day-header">TER</div>
+                            <div class="day-content">
+                                <div class="agenda-item ingles">
+                                    <strong>07:30</strong>
+                                    <span>Verbos Modais</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header">QUA</div>
+                            <div class="day-content">
+                               <div class="agenda-item financas">
+                                    <strong>12:45</strong>
+                                    <span>Orçamento 50/30/20</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header">QUI</div>
+                             <div class="day-content">
+                               <div class="agenda-item culinaria">
+                                    <strong>19:00</strong>
+                                    <span>Molho Branco</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="day-column">
+                            <div class="day-header">SEX</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tela-conteudo" class="tela">
+                    <header class="app-header">
+                        <h1>Lição do Dia</h1>
+                    </header>
+                    <div class="tela-body content-view">
+                        <span class="subject-tag financas">Finanças Pessoais</span>
+                        <h2>O Orçamento 50/30/20</h2>
+                        <p>Uma forma simples de organizar suas finanças é dividir sua renda líquida em três categorias de gastos:</p>
+                        
+                        <div class="content-list">
+                            <div class="list-item">
+                                <strong>50% para Necessidades</strong>
+                                <span>Moradia, transporte, contas de luz e água, supermercado.</span>
+                            </div>
+                            <div class="list-item">
+                                <strong>30% para Desejos</strong>
+                                <span>Lazer, hobbies, streaming, restaurantes, compras.</span>
+                            </div>
+                            <div class="list-item">
+                                <strong>20% para Poupança e Dívidas</strong>
+                                <span>Quitar dívidas, investir, criar uma reserva de emergência.</span>
+                            </div>
+                        </div>
+
+                        <p class="tip"><strong>Dica:</strong> Use um app de planilhas no celular para acompanhar seus gastos e ver se você está dentro das metas!</p>
+
+                        <div class="content-nav">
+                            <button class="btn-secondary">Lição Anterior</button>
+                            <button class="btn-primary">Concluir</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <nav class="app-bottom-nav">
+                <label for="tab-horarios" class="nav-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Horários</span>
+                </label>
+                <label for="tab-agenda" class="nav-item">
+                    <i class="fas fa-calendar-days"></i>
+                    <span>Agenda</span>
+                </label>
+                <label for="tab-conteudo" class="nav-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Conteúdo</span>
+                </label>
+            </nav>
+        </div>
+    </div>
+
+</body>
+</html>
