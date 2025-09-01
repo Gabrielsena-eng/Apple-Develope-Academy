@@ -1,166 +1,269 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo App de Estudos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Protótipo Completo do StudyLabr</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body class="flex items-center justify-center min-h-screen">
 
-    <div class="iphone-frame">
-        <div class="iphone-notch"></div>
-        <div class="app-screen">
+    <div class="iphone-container">
+        <div class="iphone-screen">
+            <div class="iphone-notch"></div>
             
-            <input type="radio" name="app-tab" id="tab-horarios" class="tab-input" checked>
-            <input type="radio" name="app-tab" id="tab-agenda" class="tab-input">
-            <input type="radio" name="app-tab" id="tab-conteudo" class="tab-input">
-
-            <main class="app-content">
-                <section id="tela-horarios" class="tela">
-                    <header class="app-header">
-                        <h1>Meus Horários</h1>
-                        <button class="btn-add"><i class="fas fa-plus"></i></button>
-                    </header>
-                    <div class="tela-body">
-                        <div class="card">
-                            <div class="card-time">
-                                <h3>07:30 - 07:45</h3>
-                                <p>Hoje, 19 de Agosto</p>
+            <!-- Tela 1: Horários (REFEITA) -->
+            <div id="screen-horarios" class="screen active">
+                <div class="screen-content">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-4xl font-bold">Meus Horários</h1>
+                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-lg">+</button>
+                    </div>
+                    <div class="mt-8 space-y-6">
+                        <!-- Item de Horário -->
+                        <div class="flex items-center">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="w-3 h-3 bg-indigo-500 rounded-full"></div>
+                                <div class="w-px h-16 bg-gray-300"></div>
                             </div>
-                            <div class="card-subject">
-                                <i class="fa-solid fa-earth-americas subject-icon ingles"></i>
-                                <span>Inglês</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-time">
-                                <h3>12:45 - 13:00</h3>
-                                <p>Amanhã, 20 de Agosto</p>
-                            </div>
-                            <div class="card-subject">
-                                <i class="fa-solid fa-piggy-bank subject-icon financas"></i>
-                                <span>Finanças</span>
+                            <div class="bg-white p-4 rounded-xl shadow-md flex-1 flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-gray-800">Inglês</p>
+                                    <p class="text-sm text-gray-500">07:30 - 07:45</p>
+                                </div>
+                                <div class="bg-indigo-100 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3" /></svg>
+                                </div>
                             </div>
                         </div>
-                         <div class="card">
-                            <div class="card-time">
-                                <h3>19:00 - 19:20</h3>
-                                <p>Quinta, 22 de Agosto</p>
+                        <!-- Item de Horário -->
+                        <div class="flex items-center">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <div class="w-px h-16 bg-gray-300"></div>
                             </div>
-                            <div class="card-subject">
-                                <i class="fa-solid fa-utensils subject-icon culinaria"></i>
-                                <span>Culinária</span>
+                            <div class="bg-white p-4 rounded-xl shadow-md flex-1 flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-gray-800">Finanças</p>
+                                    <p class="text-sm text-gray-500">12:45 - 13:00</p>
+                                </div>
+                                <div class="bg-green-100 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-time">
-                                <h3>07:30 - 07:45</h3>
-                                <p>Sexta, 23 de Agosto</p>
+                        <!-- Item de Horário -->
+                         <div class="flex items-center">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
                             </div>
-                            <div class="card-subject">
-                                <i class="fa-solid fa-earth-americas subject-icon ingles"></i>
-                                <span>Inglês</span>
+                            <div class="bg-white p-4 rounded-xl shadow-md flex-1 flex justify-between items-center">
+                                <div>
+                                    <p class="font-bold text-gray-800">Culinária</p>
+                                    <p class="text-sm text-gray-500">19:00 - 19:20</p>
+                                </div>
+                                <div class="bg-orange-100 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V8.546c.523 0 1.046-.151 1.5-.454a2.704 2.704 0 013 0 2.704 2.704 0 003 0 2.704 2.704 0 013 0 2.704 2.704 0 003 0c.454.303.977.454 1.5.454v7z" /></svg>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </div>
 
-                <section id="tela-agenda" class="tela">
-                    <header class="app-header">
-                        <h1>Agenda Semanal</h1>
-                    </header>
-                     <div class="tela-body agenda-view">
-                        <div class="day-column">
-                            <div class="day-header">SEG</div>
-                        </div>
-                        <div class="day-column active">
-                            <div class="day-header">TER</div>
-                            <div class="day-content">
-                                <div class="agenda-item ingles">
-                                    <strong>07:30</strong>
-                                    <span>Verbos Modais</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="day-column">
-                            <div class="day-header">QUA</div>
-                            <div class="day-content">
-                               <div class="agenda-item financas">
-                                    <strong>12:45</strong>
-                                    <span>Orçamento 50/30/20</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="day-column">
-                            <div class="day-header">QUI</div>
-                             <div class="day-content">
-                               <div class="agenda-item culinaria">
-                                    <strong>19:00</strong>
-                                    <span>Molho Branco</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="day-column">
-                            <div class="day-header">SEX</div>
-                        </div>
+            <!-- Tela 2: Agenda (REFEITA) -->
+            <div id="screen-agenda" class="screen">
+                <div class="screen-content">
+                    <h1 class="text-4xl font-bold">Agenda Semanal</h1>
+                    <div class="flex justify-around my-6 text-gray-500 font-semibold">
+                        <span>SEG</span>
+                        <span class="text-indigo-600 border-b-2 border-indigo-600 pb-1">TER</span>
+                        <span>QUA</span>
+                        <span>QUI</span>
+                        <span>SEX</span>
                     </div>
-                </section>
+                    <div class="relative mt-8 space-y-8">
+                        <!-- Linha da Timeline -->
+                        <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-gray-200"></div>
 
-                <section id="tela-conteudo" class="tela">
-                    <header class="app-header">
-                        <h1>Lição do Dia</h1>
-                    </header>
-                    <div class="tela-body content-view">
-                        <span class="subject-tag financas">Finanças Pessoais</span>
-                        <h2>O Orçamento 50/30/20</h2>
-                        <p>Uma forma simples de organizar suas finanças é dividir sua renda líquida em três categorias de gastos:</p>
+                        <!-- Item da Agenda -->
+                        <div class="relative flex items-start">
+                            <div class="flex-shrink-0 w-8 text-right mr-4 mt-1">
+                                <p class="text-sm font-semibold text-gray-600">07:30</p>
+                            </div>
+                            <div class="flex-shrink-0 h-full flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white absolute left-2"></div>
+                            </div>
+                            <div class="ml-8 flex-1 bg-blue-50 border border-blue-200 p-3 rounded-lg">
+                                <p class="font-bold text-blue-800">Verbos Modais</p>
+                                <p class="text-sm text-blue-700">Revisão de Inglês</p>
+                            </div>
+                        </div>
                         
-                        <div class="content-list">
-                            <div class="list-item">
-                                <strong>50% para Necessidades</strong>
-                                <span>Moradia, transporte, contas de luz e água, supermercado.</span>
+                         <!-- Item da Agenda -->
+                        <div class="relative flex items-start">
+                            <div class="flex-shrink-0 w-8 text-right mr-4 mt-1">
+                                <p class="text-sm font-semibold text-gray-600">12:45</p>
                             </div>
-                            <div class="list-item">
-                                <strong>30% para Desejos</strong>
-                                <span>Lazer, hobbies, streaming, restaurantes, compras.</span>
+                             <div class="flex-shrink-0 h-full flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-green-500 border-2 border-white absolute left-2"></div>
                             </div>
-                            <div class="list-item">
-                                <strong>20% para Poupança e Dívidas</strong>
-                                <span>Quitar dívidas, investir, criar uma reserva de emergência.</span>
+                            <div class="ml-8 flex-1 bg-green-50 border border-green-200 p-3 rounded-lg">
+                                <p class="font-bold text-green-800">Orçamento 50/30/20</p>
+                                <p class="text-sm text-green-700">Tópico de Finanças</p>
                             </div>
                         </div>
 
-                        <p class="tip"><strong>Dica:</strong> Use um app de planilhas no celular para acompanhar seus gastos e ver se você está dentro das metas!</p>
-
-                        <div class="content-nav">
-                            <button class="btn-secondary">Lição Anterior</button>
-                            <button class="btn-primary">Concluir</button>
+                         <!-- Item da Agenda -->
+                        <div class="relative flex items-start">
+                             <div class="flex-shrink-0 w-8 text-right mr-4 mt-1">
+                                <p class="text-sm font-semibold text-gray-600">19:00</p>
+                            </div>
+                             <div class="flex-shrink-0 h-full flex items-center">
+                                <div class="w-4 h-4 rounded-full bg-orange-500 border-2 border-white absolute left-2"></div>
+                            </div>
+                            <div class="ml-8 flex-1 bg-orange-50 border border-orange-200 p-3 rounded-lg">
+                                <p class="font-bold text-orange-800">Molho Branco</p>
+                                <p class="text-sm text-orange-700">Aula de Culinária</p>
+                            </div>
                         </div>
                     </div>
-                </section>
-            </main>
+                </div>
+            </div>
 
-            <nav class="app-bottom-nav">
-                <label for="tab-horarios" class="nav-item">
-                    <i class="fas fa-clock"></i>
-                    <span>Horários</span>
-                </label>
-                <label for="tab-agenda" class="nav-item">
-                    <i class="fas fa-calendar-days"></i>
-                    <span>Agenda</span>
-                </label>
-                <label for="tab-conteudo" class="nav-item">
-                    <i class="fas fa-book-open"></i>
-                    <span>Conteúdo</span>
-                </label>
-            </nav>
+            <!-- Tela 3: Conteúdo -->
+            <div id="screen-conteudo" class="screen">
+                 <div class="screen-content">
+                    <h1 class="text-4xl font-bold">Conteúdos</h1>
+                    <p class="text-gray-500 mt-1">Explore os tópicos disponíveis.</p>
+                    <div class="space-y-4 mt-8">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <h3 class="font-bold text-lg">🌎 Inglês</h3>
+                            <p class="text-sm text-gray-600 mt-1">Aulas sobre gramática, vocabulário e conversação para todos os níveis.</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                                <div class="bg-violet-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                         <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <h3 class="font-bold text-lg">💰 Finanças</h3>
+                            <p class="text-sm text-gray-600 mt-1">Aprenda a organizar seu dinheiro, investir e planejar seu futuro financeiro.</p>
+                             <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                         <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <h3 class="font-bold text-lg">💻 Programação</h3>
+                            <p class="text-sm text-gray-600 mt-1">Tópicos sobre desenvolvimento de software, algoritmos e novas tecnologias.</p>
+                             <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                                <div class="bg-sky-500 h-2.5 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela 4: Progresso -->
+            <div id="screen-progresso" class="screen">
+                <div class="screen-content">
+                    <h1 class="text-4xl font-bold">Meu Progresso</h1>
+                    <p class="text-gray-500 mt-1">Resumo da sua semana de estudos.</p>
+                    <div class="grid grid-cols-3 gap-4 my-6 text-center">
+                        <div class="bg-violet-100 p-3 rounded-lg"><p class="text-xs text-violet-700">HORAS FOCADAS</p><p class="text-xl font-bold text-violet-900">8.5h</p></div>
+                        <div class="bg-green-100 p-3 rounded-lg"><p class="text-xs text-green-700">LIÇÕES CONCLUÍDAS</p><p class="text-xl font-bold text-green-900">12</p></div>
+                        <div class="bg-sky-100 p-3 rounded-lg"><p class="text-xs text-sky-700">TÓPICOS NOVOS</p><p class="text-xl font-bold text-sky-900">3</p></div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <p class="font-semibold mb-2">Horas de estudo por dia</p>
+                        <div class="progress-bar">
+                            <div class="bar" style="height: 60%;"></div><div class="bar" style="height: 80%;"></div><div class="bar" style="height: 40%;"></div><div class="bar" style="height: 90%;"></div><div class="bar" style="height: 70%;"></div>
+                        </div>
+                        <div class="flex justify-around text-xs text-gray-500 mt-1"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span></div>
+                    </div>
+                    <div class="mt-6"><h3 class="font-semibold text-lg mb-3">Progresso por Matéria</h3><div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center">
+                            <div class="relative w-24 h-24"><svg class="w-full h-full" viewBox="0 0 100 100"><circle class="text-gray-200" stroke-width="10" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /><circle class="text-violet-600 progress-circle" stroke-width="10" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" data-progress="75" /></svg><span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold text-gray-700">75%</span></div>
+                            <p class="mt-3 font-semibold">Inglês</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center">
+                            <div class="relative w-24 h-24"><svg class="w-full h-full" viewBox="0 0 100 100"><circle class="text-gray-200" stroke-width="10" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" /><circle class="text-green-500 progress-circle" stroke-width="10" stroke-linecap="round" stroke="currentColor" fill="transparent" r="45" cx="50" cy="50" data-progress="50" /></svg><span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold text-gray-700">50%</span></div>
+                            <p class="mt-3 font-semibold">Finanças</p>
+                        </div>
+                    </div></div>
+                    <div class="mt-6"><h3 class="font-semibold text-lg mb-3">Atividades Recentes</h3><div class="space-y-3">
+                        <div class="bg-white p-3 rounded-lg shadow-sm flex items-center"><div class="bg-green-100 text-green-600 p-2 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div><div><p class="font-semibold">Verbo "to be": Exercícios</p><p class="text-sm text-gray-500">Inglês - Concluído</p></div></div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm flex items-center"><div class="bg-green-100 text-green-600 p-2 rounded-full mr-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg></div><div><p class="font-semibold">Orçamento 50/30/20</p><p class="text-sm text-gray-500">Finanças - Concluído</p></div></div>
+                    </div></div>
+                </div>
+            </div>
+
+            <!-- Barra de navegação fixa no final -->
+            <div class="w-full bg-gray-100 border-t border-gray-200 p-2 flex justify-around absolute bottom-0 z-10" style="padding-bottom: 20px;">
+                <button class="nav-item text-center text-gray-500" data-target="screen-horarios">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    <span class="text-xs">Horários</span>
+                </button>
+                <button class="nav-item text-center text-gray-500" data-target="screen-agenda">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    <span class="text-xs">Agenda</span>
+                </button>
+                <button class="nav-item text-center text-gray-500" data-target="screen-conteudo">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                    <span class="text-xs">Conteúdo</span>
+                </button>
+                <button class="nav-item text-center text-gray-500" data-target="screen-progresso">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+                    <span class="text-xs">Progresso</span>
+                </button>
+            </div>
         </div>
     </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navItems = document.querySelectorAll('.nav-item');
+        const screens = document.querySelectorAll('.screen');
+
+        function showScreen(screenId) {
+            screens.forEach(screen => {
+                screen.classList.toggle('active', screen.id === screenId);
+            });
+            if (screenId === 'screen-progresso') {
+                animateProgressCircles();
+            }
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(i => i.classList.remove('active-nav'));
+                item.classList.add('active-nav');
+                const targetScreenId = item.dataset.target;
+                showScreen(targetScreenId);
+            });
+        });
+
+        function animateProgressCircles() {
+            const progressCircles = document.querySelectorAll('#screen-progresso .progress-circle');
+            progressCircles.forEach(circle => {
+                const radius = circle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                const progress = circle.dataset.progress;
+                
+                circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                circle.style.strokeDashoffset = circumference;
+
+                requestAnimationFrame(() => {
+                    const offset = circumference - (progress / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+                });
+            });
+        }
+
+        document.querySelector('[data-target="screen-horarios"]').classList.add('active-nav');
+        showScreen('screen-horarios');
+    });
+</script>
 
 </body>
 </html>
