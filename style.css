@@ -1,207 +1,94 @@
 
-:root {
-    --ios-blue: #007aff;
-    --background: #f2f2f7; 
-    --card-bg: #ffffff;
-    --text-primary: #1d1d1f;
-    --text-secondary: #8a8a8e;
-    --border-color: #e5e5ea;
-    --shadow-color: rgba(0, 0, 0, 0.05);
-
-   
-    --ingles-bg: #dbeaff; --ingles-fg: #005ce6;
-    --financas-bg: #d9f5e5; --financas-fg: #1d8a4c;
-    --culinaria-bg: #ffeeda; --culinaria-fg: #e87a00;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #e9ebee;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-
-.iphone-frame {
-    width: 375px;
-    height: 812px;
-    background-color: var(--background);
-    border: 12px solid #1c1c1e;
-    border-radius: 54px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.iphone-notch {
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 28px;
-    background-color: #1c1c1e;
-    border-radius: 0 0 15px 15px;
-    z-index: 10;
-}
-
-.app-screen {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.app-content {
-    flex-grow: 1;
-    overflow-y: auto;
-}
-.app-content::-webkit-scrollbar { display: none; } 
-
-.tela {
-    padding: 0 20px;
-    display: none;
-}
-
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 0 20px 0;
-}
-
-.app-header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.btn-add {
-    background-color: var(--ios-blue);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-    transition: transform 0.2s ease;
-}
-.btn-add:active { transform: scale(0.95); }
-
-.tela-body {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding-bottom: 20px;
-}
-
-
-.card {
-    background-color: var(--card-bg);
-    padding: 18px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 15px var(--shadow-color);
-}
-.card-time h3 { font-size: 16px; font-weight: 500; color: var(--text-primary); }
-.card-time p { font-size: 13px; color: var(--text-secondary); }
-.card-subject { display: flex; align-items: center; gap: 10px; font-weight: 500; }
-.subject-icon { font-size: 22px; }
-
-
-.subject-icon.ingles { color: var(--ingles-fg); }
-.subject-icon.financas { color: var(--financas-fg); }
-.subject-icon.culinaria { color: var(--culinaria-fg); }
-
-
-
-.agenda-view { flex-direction: row; gap: 10px; }
-.day-column { flex: 1; text-align: center; }
-.day-header { font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; font-size: 14px; }
-.day-column.active .day-header { color: var(--ios-blue); }
-.agenda-item {
-    padding: 12px 8px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    text-align: left;
-}
-.agenda-item.ingles { background-color: var(--ingles-fg); }
-.agenda-item.financas { background-color: var(--financas-fg); }
-.agenda-item.culinaria { background-color: var(--culinaria-fg); }
-
-
-.content-view { gap: 18px; }
-.subject-tag {
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 600;
-    align-self: flex-start;
-}
-.subject-tag.financas { background-color: var(--financas-bg); color: var(--financas-fg); }
-
-.content-view h2 { font-size: 24px; font-weight: 600; }
-.content-view p { color: var(--text-secondary); line-height: 1.7; }
-.content-list { display: flex; flex-direction: column; gap: 15px; }
-.list-item { display: flex; flex-direction: column; }
-.list-item strong { color: var(--text-primary); font-weight: 500; }
-.list-item span { color: var(--text-secondary); font-size: 14px; }
-.tip { background-color: #fffbe6; color: #664d03; padding: 15px; border-radius: 8px; font-size: 14px; }
-.content-nav { display: flex; gap: 10px; margin-top: 20px; }
-.content-nav button { flex: 1; padding: 14px; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; font-size: 16px; }
-.btn-primary { background-color: var(--ios-blue); color: white; }
-.btn-secondary { background-color: var(--border-color); color: var(--text-primary); }
-
-
-.app-bottom-nav {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0 25px 0;
-    background-color: rgba(249, 249, 249, 0.9);
-    border-top: 1px solid var(--border-color);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-.nav-item i { font-size: 20px; }
-.tab-input { display: none; }
-
-#tab-horarios:checked ~ .app-content #tela-horarios,
-#tab-agenda:checked ~ .app-content #tela-agenda,
-#tab-conteudo:checked ~ .app-content #tela-conteudo {
-    display: block;
-}
-
-#tab-horarios:checked ~ .app-bottom-nav label[for="tab-horarios"],
-#tab-agenda:checked ~ .app-bottom-nav label[for="tab-agenda"],
-#tab-conteudo:checked ~ .app-bottom-nav label[for="tab-conteudo"] {
-    color: var(--ios-blue);
-}
+ {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .iphone-container {
+            width: 375px;
+            height: 812px;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4);
+            position: relative;
+            background: #111;
+            padding: 12px;
+            transform: scale(0.9);
+            margin: 2rem auto;
+        }
+        .iphone-screen {
+            background: #f9fafb; /* bg-gray-50 */
+            width: 100%;
+            height: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            position: relative;
+        }
+        .iphone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 28px;
+            background: #111;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 20;
+        }
+        .screen {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .screen.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .screen-content {
+            padding: 2.5rem 1.5rem 6rem; /* Add padding to bottom */
+            color: #1f2937;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+        }
+        /* Scrollbar styling */
+        .screen-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        .screen-content::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        .progress-bar {
+            display: flex;
+            gap: 2px;
+            align-items: flex-end;
+            height: 100px;
+            width: 100%;
+            padding: 0 10px;
+            justify-content: space-around;
+        }
+        .bar {
+            background-color: #4f46e5;
+            border-radius: 4px 4px 0 0;
+            width: 20px;
+            animation: grow 1s ease-out;
+        }
+        @keyframes grow {
+            0% { height: 0; }
+        }
+        .progress-circle {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            transition: stroke-dashoffset 1.5s ease-out;
+        }
+        .nav-item.active-nav {
+            color: #4f46e5; /* text-indigo-600 */
+            font-weight: 600;
+        }
